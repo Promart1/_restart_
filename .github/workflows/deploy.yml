@@ -14,6 +14,7 @@ jobs:
         with:
           node-version: 12
       - run: |
+          cd $GITHUB_WORKSPACE  # Change to the repository directory
           npm ci
           npm run build
       - run: gulp
