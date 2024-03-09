@@ -12,15 +12,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0 # Fetch all history to ensure the entire repository is available
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 12
 
+      - name: Display current directory
+        run: echo "Current directory: $PWD"
+
       - name: Change to repository directory
-        run: cd /home/runner/work/
+        run: cd $GITHUB_WORKSPACE
+
+      - name: Display current directory after change
+        run: echo "Current directory: $PWD"
 
       - name: Install dependencies
         run: npm ci
