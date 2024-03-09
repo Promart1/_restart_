@@ -20,13 +20,13 @@ jobs:
           node-version: 12
 
       - name: Display current directory
-        run: echo "Current directory: $PWD"
+        run: echo $pwd
 
       - name: Change to repository directory
         run: cd $GITHUB_WORKSPACE
 
       - name: Display current directory after change
-        run: echo "Current directory: $PWD"
+        run: echo $pwd
 
       - name: Install dependencies
         run: npm ci
