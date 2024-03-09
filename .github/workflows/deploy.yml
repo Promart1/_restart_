@@ -20,7 +20,7 @@ jobs:
           node-version: 12
 
       - name: Change to repository directory
-        run: cd /home/runner/work/_restart_
+        run: cd /home/runner/work/
 
       - name: Install dependencies
         run: npm ci
