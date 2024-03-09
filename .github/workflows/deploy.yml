@@ -9,15 +9,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: |
-          cd $GITHUB_WORKSPACE  # Change to the repository directory
-          npm ci
-          npm run build
-      - run: gulp
+
+      - name: Change to repository directory
+        run: cd $GITHUB_WORKSPACE
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Run gulp
+        run: gulp
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
