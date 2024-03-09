@@ -19,14 +19,9 @@ jobs:
         with:
           node-version: 12
 
-      - run: change dir
-        working-directory: /home/runner/work/_restart_
-
-      - name: Display current directory after change
-        run: pwd
-
       - name: Install dependencies
         run: npm ci
+        working-directory: /home/runner/work/_restart_
 
       - name: Build project
         run: npm run build
