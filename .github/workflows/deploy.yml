@@ -20,7 +20,7 @@ jobs:
           node-version: 12
 
       - name: Change to repository directory
-        run: cd $GITHUB_WORKSPACE
+        run: cd /home/runner/work/_restart_
 
       - name: Install dependencies
         run: npm ci
