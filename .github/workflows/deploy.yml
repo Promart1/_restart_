@@ -19,11 +19,8 @@ jobs:
         with:
           node-version: 12
 
-      - name: Display current directory
-        run: pwd
-
-      - name: Change to repository directory
-        run: cd /home/runner/work/_restart_
+      - run: change dir
+        working-directory: /home/runner/work/_restart_
 
       - name: Display current directory after change
         run: pwd
